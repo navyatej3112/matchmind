@@ -10,6 +10,35 @@ A monorepo project for sports analytics and match prediction using machine learn
 - **ML**: scikit-learn (LogisticRegression)
 - **Containerization**: Docker Compose
 
+## Screenshots
+
+### Application Interface
+
+![MatchMind Application](matchmind%20image.png)
+
+The MatchMind frontend provides a clean, modern interface for sports analytics and predictions with a beautiful gradient background and intuitive card-based layout.
+
+**Key Features Shown:**
+- **Team Selection**: Interactive grid of team buttons (top section)
+- **Team Form Display**: Shows last 5 matches with color-coded results
+  - 🟢 Green badge for Wins
+  - 🟡 Yellow badge for Draws  
+  - 🔴 Red badge for Losses
+- **Statistics**: Points and goal difference calculated from recent matches
+- **Match Prediction**: Dropdown selectors for teams and season
+- **Probability Visualization**: Horizontal progress bars showing prediction probabilities
+  - Home Win (Green bar)
+  - Draw (Yellow bar)
+  - Away Win (Red bar)
+- **Feature Explanations**: Shows top contributing features with values and contributions
+
+### UI Features
+
+- **Modern Design**: Gradient background (purple to blue), clean white cards with shadows
+- **Interactive Elements**: Hover effects, active states, smooth transitions
+- **Responsive Layout**: Works on desktop and tablet screens
+- **Color Coding**: Intuitive color scheme for match results and predictions
+
 ## Quick Start
 
 ### Prerequisites
