@@ -1,0 +1,34 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    postgresql-client \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY backend/ ./backend/
+COPY scripts/ ./scripts/
+COPY data/ ./data/
+COPY models/ ./models/
+
+# Create models directory if it doesn't exist
+RUN mkdir -p /app/models
+
+# Copy alembic config
+COPY alembic.ini .
+COPY alembic/ ./alembic/
+
+# Make startup script executable
+COPY backend/startup.sh /app/startup.sh
+RUN chmod +x /app/startup.sh
+
+EXPOSE 8000
+
+CMD ["/app/startup.sh"]
+
